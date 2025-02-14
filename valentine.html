@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        /* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffb6c1, #ff66b2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Heading style */
+.main-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff3366;
+    margin-bottom: 20px;
+}
+
+/* Heart Animation */
+.heart-animation {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+/* Heart animation keyframes */
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Love message */
+.love-message {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    min-height: 60px;
+}
+
+/* Buttons */
+.response-buttons button {
+    font-size: 16px;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.yes-btn {
+    background: #ff3366;
+    color: white;
+}
+
+.yes-btn:hover {
+    background: #ff6699;
+}
+
+.no-btn {
+    background: #ff6666;
+    color: white;
+}
+
+.no-btn:hover {
+    background: #ff9999;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-heading">💕 Will You Be My Valentine? 💕</h1>
+        <div class="heart-animation">
+            <img src="https://media.tenor.com/0imRtuzqccIAAAAj/bubu-dudu-flower-gift.gif" alt="Heart" class="heart">
+        </div>
+        <p class="love-message" id="message">
+            I've been thinking... there's no one else I would want to share this special day with. Will you be mine?
+        </p>
+        <div class="response-buttons">
+            <button class="yes-btn" onclick="acceptLove()">Yes! 💖</button>
+            <button class="no-btn" onclick="keepAsking()">No 😢</button>
+        </div>
+    </div>
+
+    <script>
+    let messages = [
+        "Are you sure? 🥺 Please be my Valentine! 💕",
+        "Come on, don't break my heart! 💔",
+        "I promise I'll get you chocolates! 🍫",
+        "I'll be the best Valentine ever! 😘",
+        "You're too cute to say no! 😍",
+        "Last chance! Will you be my Valentine? 💘"
+    ];
+    
+    let messageIndex = 0;
+    
+    function keepAsking() {
+        let messageElement = document.getElementById("message");
+        
+        if (messageIndex < messages.length) {
+            messageElement.innerHTML = messages[messageIndex];
+            messageIndex++;
+        } else {
+            messageElement.innerHTML = "I won't give up! 😆 Please say Yes!";
+        }
+    }
+    
+    function acceptLove() {
+        document.getElementById("message").innerHTML = "Yay! I love youuuu sooo much my galuuuuu💖 toh fir shaam ko chale date pe chale Kruncheez and be ready at 7 tonight. Mast khayege aur jalsaa💐";
+        document.querySelector(".response-buttons").style.display = "none";
+    }
+    </script>
+</body>
+</html>
